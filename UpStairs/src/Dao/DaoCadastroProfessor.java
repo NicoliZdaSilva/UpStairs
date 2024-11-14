@@ -1,17 +1,10 @@
 package Dao;
 
-import Model.Pessoa;
 import Model.Professor;
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-import javax.persistence.EntityManagerFactory;
 
-public class DaoCadastroProfessor {
+public class DaoCadastroProfessor extends Dao {
 
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU");
-
-    public static boolean insert(Professor p) {
-        EntityManager em = emf.createEntityManager();
+    public boolean insert(Professor p) {
         try {
             em.getTransaction().begin();
             em.persist(p);
@@ -23,12 +16,5 @@ public class DaoCadastroProfessor {
         } finally {
             em.close();
         }
-    }
-
-    public static void main(String[] args) {
-        Professor professor = new Professor();
-        professor.setNome("Nicoli Zimmermann");
-        professor.setEmail("nicoli@gmail.com");
-        professor.setSenha("1234");
     }
 }
