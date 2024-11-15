@@ -16,7 +16,10 @@ public abstract class Pessoa {
     protected String email;
     
     public Pessoa(){
-        
+    }
+    
+    public long getId() {
+        return id;
     }
 
     public String getNome() {
@@ -43,11 +46,9 @@ public abstract class Pessoa {
         this.email = email;
     }
     
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public String toString(){
+        String text = "Nome: "+ this.nome;
+        text += ", email: " + this.email;
+        return text;
     }
 }

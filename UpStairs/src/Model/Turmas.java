@@ -13,25 +13,14 @@ public class Turmas {
     private long id;
     protected String nome;
     protected Professor professor;
-    protected ArrayList<Aluno> Alunos;
-    protected boolean presenca; // Não mexido ainda
-    
-    public Turmas (){
-        this.Alunos = new ArrayList<Aluno>();
+    protected ArrayList<Aluno> alunos;
+        
+    public Turmas(){
+        this.alunos = new ArrayList<Aluno>();
     }
-    public void addAluno(Aluno umAluno){
-        this.Alunos.add(umAluno);
-    }
-    public ArrayList<Aluno> getAlunos(){
-        return this.Alunos;
-    }   
-    
+       
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -49,4 +38,30 @@ public class Turmas {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
+    
+    public String toString(){
+        String text = "";
+        text = "Id: " + this.id;
+        text += "\nNome da turma: " + this.nome;
+        text += "\nProfessor: " + this.professor;
+        text += "\n Alunos: \n";
+        
+        for(Aluno alu: this.alunos){
+            text += alu.toString() + "\n";
+        }
+      return text;
+    }
+    
+    public void addAluno(Aluno umAluno){
+        this.alunos.add(umAluno);
+    }
+    
+    public void removeAluno(Aluno umAluno){
+        this.alunos.remove(umAluno);
+    }
+    
+    public ArrayList<Aluno> getAlunos(){
+        return this.alunos;
+    }   
+    
 }
