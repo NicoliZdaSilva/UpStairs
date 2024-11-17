@@ -7,6 +7,7 @@
     <class>Model.Pessoa</class>
     <class>Model.Professor</class>
     <class>Model.Turma</class>
+    <class>Model.Nota</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/upstairs"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

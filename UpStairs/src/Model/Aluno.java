@@ -4,16 +4,22 @@ import Dao.Identifier;
 import java.util.ArrayList;
 import javax.persistence.Entity;
 import java.util.List;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Aluno extends Pessoa implements Identifier{
     private String matricula;
     
-    private ArrayList<Nota> notas;
+    @ManyToOne
+    private Turma turma;
+    
+    @OneToMany(mappedBy = "aluno")
+    private List<Nota> notas = new ArrayList<>();
+    
     private List<Boolean> presenca; 
     
     public Aluno(){
-        notas = new ArrayList<Nota>();
         presenca = new ArrayList<Boolean>();
 
     }
@@ -38,7 +44,7 @@ public class Aluno extends Pessoa implements Identifier{
        this.notas.remove(index);
     }
     
-    public ArrayList<Nota> getNotas(){
+    public List<Nota> getNotas(){
         return this.notas;
     }
     

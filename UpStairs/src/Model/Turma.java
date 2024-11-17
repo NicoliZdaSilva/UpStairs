@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Turma implements Identifier {
@@ -14,11 +16,14 @@ public class Turma implements Identifier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     protected String nome;
-    protected Professor professor;
-    protected List<Aluno> alunos;
+    
+    @ManyToOne
+    private Professor professor;
+    
+    @OneToMany(mappedBy = "turma")
+    protected List<Aluno> alunos = new ArrayList<>();
         
     public Turma(){
-        this.alunos = new ArrayList<Aluno>();
     }
        
     public long getId() {

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Nota implements Identifier {
@@ -14,6 +15,9 @@ public class Nota implements Identifier {
     private long id;
     
     private double valor;
+    
+    @ManyToOne
+    private Aluno aluno;
     
     public Nota(){
         this.valor = 0.0;
