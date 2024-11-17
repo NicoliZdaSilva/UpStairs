@@ -8,12 +8,12 @@ package Views.Adm;
  *
  * @author thaia
  */
-public class ViewCadastro extends javax.swing.JFrame {
+public class ViewCadastroAluno extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewCadastro
      */
-    public ViewCadastro() {
+    public ViewCadastroAluno() {
         initComponents();
     }
 
@@ -41,6 +41,7 @@ public class ViewCadastro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lLogoP = new javax.swing.JLabel();
         lRegister = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +92,7 @@ public class ViewCadastro extends javax.swing.JFrame {
         });
 
         tfBook.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 14)); // NOI18N
-        tfBook.setText("Book");
+        tfBook.setText("Registration");
         tfBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfBookActionPerformed(evt);
@@ -139,7 +140,10 @@ public class ViewCadastro extends javax.swing.JFrame {
         lRegister.setBackground(new java.awt.Color(0, 51, 102));
         lRegister.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lRegister.setForeground(new java.awt.Color(255, 255, 255));
-        lRegister.setText("REGISTER");
+        lRegister.setText("REGISTER - STUDENT");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/arrow_back.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,9 +152,11 @@ public class ViewCadastro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(lLogoP)
-                .addGap(264, 264, 264)
+                .addGap(225, 225, 225)
                 .addComponent(lRegister)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,8 +166,10 @@ public class ViewCadastro extends javax.swing.JFrame {
                 .addContainerGap(7, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lRegister)
-                .addGap(20, 20, 20))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lRegister)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,26 +296,28 @@ public class ViewCadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastroAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastroAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastroAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastroAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewCadastro().setVisible(true);
+                new ViewCadastroAluno().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bSave;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lLogoP;
     private javax.swing.JLabel lParents;
