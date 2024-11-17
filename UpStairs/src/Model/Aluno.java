@@ -1,14 +1,16 @@
 package Model;
 
+import Dao.Identifier;
 import java.util.ArrayList;
 import javax.persistence.Entity;
 import java.util.List;
 
 @Entity
-public class Aluno extends Pessoa{
-    protected String matricula;
-    protected ArrayList<Nota> notas;
-    protected List<Boolean> presenca; 
+public class Aluno extends Pessoa implements Identifier{
+    private String matricula;
+    
+    private ArrayList<Nota> notas;
+    private List<Boolean> presenca; 
     
     public Aluno(){
         notas = new ArrayList<Nota>();

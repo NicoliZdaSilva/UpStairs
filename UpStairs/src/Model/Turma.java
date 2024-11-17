@@ -1,21 +1,23 @@
 package Model;
 
+import Dao.Identifier;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Turmas {
+public class Turma implements Identifier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     protected String nome;
     protected Professor professor;
-    protected ArrayList<Aluno> alunos;
+    protected List<Aluno> alunos;
         
-    public Turmas(){
+    public Turma(){
         this.alunos = new ArrayList<Aluno>();
     }
        
@@ -60,7 +62,7 @@ public class Turmas {
         this.alunos.remove(umAluno);
     }
     
-    public ArrayList<Aluno> getAlunos(){
+    public List<Aluno> getAlunos(){
         return this.alunos;
     }   
     
