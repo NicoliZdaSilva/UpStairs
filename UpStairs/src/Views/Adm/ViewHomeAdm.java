@@ -26,6 +26,11 @@ public class ViewHomeAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
         pHome = new javax.swing.JPanel();
         lLogoP = new javax.swing.JLabel();
         lProfessores = new javax.swing.JLabel();
@@ -40,6 +45,12 @@ public class ViewHomeAdm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lImgAlunos1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -244,6 +255,11 @@ public class ViewHomeAdm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JLabel lImgAlunos;
     private javax.swing.JLabel lImgAlunos1;
     private javax.swing.JLabel lImgPerfil;
