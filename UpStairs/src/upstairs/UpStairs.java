@@ -1,8 +1,6 @@
 package upstairs;
 
 import Dao.AlunoDAO;
-import Dao.DaoCadastroProfessor;
-import Dao.GenericDAOImp;
 import Dao.IGenericDAO;
 import Model.Aluno;
 

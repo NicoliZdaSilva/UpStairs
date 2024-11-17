@@ -6,7 +6,7 @@ package Views;
 
 /**
  *
- * @author nicol
+ * @author thaia
  */
 public class ViewLogin extends javax.swing.JFrame {
 
@@ -26,21 +26,119 @@ public class ViewLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Fundo = new javax.swing.JLayeredPane();
+        jLabel1 = new javax.swing.JLabel();
+        lLogin = new javax.swing.JLabel();
+        tfEmail = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        bAccess = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Fundo.setBackground(new java.awt.Color(0, 0, 0));
+        Fundo.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/logoUpstairs.png"))); // NOI18N
+
+        lLogin.setBackground(new java.awt.Color(102, 102, 102));
+        lLogin.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        lLogin.setForeground(new java.awt.Color(51, 51, 51));
+        lLogin.setText("LOGIN");
+
+        tfEmail.setText("E-mail");
+        tfEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEmailActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
+        bAccess.setBackground(new java.awt.Color(0, 102, 255));
+        bAccess.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        bAccess.setText("Access");
+        bAccess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAccessActionPerformed(evt);
+            }
+        });
+
+        Fundo.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Fundo.setLayer(lLogin, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Fundo.setLayer(tfEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Fundo.setLayer(jPasswordField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Fundo.setLayer(bAccess, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout FundoLayout = new javax.swing.GroupLayout(Fundo);
+        Fundo.setLayout(FundoLayout);
+        FundoLayout.setHorizontalGroup(
+            FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FundoLayout.createSequentialGroup()
+                .addGap(259, 259, 259)
+                .addComponent(jLabel1)
+                .addGap(0, 260, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(tfEmail)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createSequentialGroup()
+                        .addComponent(bAccess)
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createSequentialGroup()
+                        .addComponent(lLogin)
+                        .addGap(83, 83, 83)))
+                .addGap(373, 373, 373))
+        );
+        FundoLayout.setVerticalGroup(
+            FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FundoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
+                .addComponent(lLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bAccess)
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 652, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Fundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 338, Short.MAX_VALUE)
+            .addComponent(Fundo, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfEmailActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void bAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAccessActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +176,11 @@ public class ViewLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLayeredPane Fundo;
+    private javax.swing.JButton bAccess;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel lLogin;
+    private javax.swing.JTextField tfEmail;
     // End of variables declaration//GEN-END:variables
 }
