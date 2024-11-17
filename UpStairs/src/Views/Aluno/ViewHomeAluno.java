@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Views;
+package Views.Aluno;
 
 /**
  *
  * @author thaia
  */
-public class ViewHomeProf extends javax.swing.JFrame {
+public class ViewHomeAluno extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewHomeProf
+     * Creates new form ViewHomeAluno
      */
-    public ViewHomeProf() {
+    public ViewHomeAluno() {
         initComponents();
     }
 
@@ -30,14 +30,14 @@ public class ViewHomeProf extends javax.swing.JFrame {
         lLogoP = new javax.swing.JLabel();
         lImgPerfil = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        pStudents4 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        lImgAlunos4 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         pStudents = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lImgAlunos = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        pStudents4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        lImgAlunos4 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,44 +80,6 @@ public class ViewHomeProf extends javax.swing.JFrame {
                         .addGap(8, 8, 8))))
         );
 
-        pStudents4.setBackground(new java.awt.Color(255, 255, 255));
-        pStudents4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
-
-        lImgAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/CLASSES.png"))); // NOI18N
-
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("CLASSES");
-
-        javax.swing.GroupLayout pStudents4Layout = new javax.swing.GroupLayout(pStudents4);
-        pStudents4.setLayout(pStudents4Layout);
-        pStudents4Layout.setHorizontalGroup(
-            pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pStudents4Layout.createSequentialGroup()
-                .addGroup(pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pStudents4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lImgAlunos4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pStudents4Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel11)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pStudents4Layout.setVerticalGroup(
-            pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pStudents4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lImgAlunos4)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addContainerGap())
-        );
-
         pStudents.setBackground(new java.awt.Color(255, 255, 255));
         pStudents.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
 
@@ -126,7 +88,7 @@ public class ViewHomeProf extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("STUDENTS");
+        jLabel3.setText("GRADES");
 
         javax.swing.GroupLayout pStudentsLayout = new javax.swing.GroupLayout(pStudents);
         pStudents.setLayout(pStudentsLayout);
@@ -140,7 +102,7 @@ public class ViewHomeProf extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pStudentsLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
+                        .addGap(78, 78, 78)
                         .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -154,6 +116,44 @@ public class ViewHomeProf extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pStudents4.setBackground(new java.awt.Color(255, 255, 255));
+        pStudents4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
+
+        lImgAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/CLASSES.png"))); // NOI18N
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("CLASS");
+
+        javax.swing.GroupLayout pStudents4Layout = new javax.swing.GroupLayout(pStudents4);
+        pStudents4.setLayout(pStudents4Layout);
+        pStudents4Layout.setHorizontalGroup(
+            pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pStudents4Layout.createSequentialGroup()
+                .addGroup(pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pStudents4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lImgAlunos4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pStudents4Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel11)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pStudents4Layout.setVerticalGroup(
+            pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pStudents4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pStudents4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lImgAlunos4)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,20 +203,20 @@ public class ViewHomeProf extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewHomeProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewHomeAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewHomeProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewHomeAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewHomeProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewHomeAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewHomeProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewHomeAluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewHomeProf().setVisible(true);
+                new ViewHomeAluno().setVisible(true);
             }
         });
     }
@@ -227,24 +227,12 @@ public class ViewHomeProf extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lImgAlunos;
-    private javax.swing.JLabel lImgAlunos1;
-    private javax.swing.JLabel lImgAlunos2;
-    private javax.swing.JLabel lImgAlunos3;
     private javax.swing.JLabel lImgAlunos4;
     private javax.swing.JLabel lImgPerfil;
     private javax.swing.JLabel lLogoP;
     private javax.swing.JPanel pHome;
     private javax.swing.JPanel pStudents;
-    private javax.swing.JPanel pStudents1;
-    private javax.swing.JPanel pStudents2;
-    private javax.swing.JPanel pStudents3;
     private javax.swing.JPanel pStudents4;
     // End of variables declaration//GEN-END:variables
 }
