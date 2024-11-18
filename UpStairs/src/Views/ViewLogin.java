@@ -161,15 +161,18 @@ public class ViewLogin extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, "Login falhou. E-mail ou senha inválidos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
            
        }else if (response.getClass()== Administrador.class){
-           new ViewHomeAdm().setVisible(true);
+            LoginController.telaHome = new ViewHomeAdm();
+            LoginController.telaHome.setVisible(true);
            this.dispose();
         
             }else if (response.getClass()== Professor.class){
-                new ViewHomeProf().setVisible(true);
+                LoginController.telaHome = new ViewHomeProf();
+                LoginController.telaHome.setVisible(true);
                 this.dispose();
         
                 }else if (response.getClass()== Aluno.class){
-                    new ViewHomeAluno().setVisible(true);
+                    LoginController.telaHome = new ViewHomeAluno();
+                    LoginController.telaHome.setVisible(true);
                     this.dispose();
                 }
     }//GEN-LAST:event_Login

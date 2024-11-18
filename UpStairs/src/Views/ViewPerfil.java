@@ -4,6 +4,8 @@
  */
 package Views;
 
+import Controller.LoginController;
+
 /**
  *
  * @author thaia
@@ -29,7 +31,7 @@ public class ViewPerfil extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lLogoP = new javax.swing.JLabel();
         lRegister = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lVoltar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lUser = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -40,7 +42,7 @@ public class ViewPerfil extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +56,13 @@ public class ViewPerfil extends javax.swing.JFrame {
         lRegister.setForeground(new java.awt.Color(255, 255, 255));
         lRegister.setText("PROFILE");
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/arrow_back.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
+        lVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/arrow_back.png"))); // NOI18N
+        lVoltar.setText("jLabel9");
+        lVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lVoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,7 +74,7 @@ public class ViewPerfil extends javax.swing.JFrame {
                 .addGap(292, 292, 292)
                 .addComponent(lRegister)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 361, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
         jPanel1Layout.setVerticalGroup(
@@ -78,7 +85,7 @@ public class ViewPerfil extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lRegister)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lLogoP)))
@@ -115,12 +122,12 @@ public class ViewPerfil extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         jLabel13.setText("01/01/2000");
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("LOGOUT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bLogout.setBackground(new java.awt.Color(204, 0, 51));
+        bLogout.setForeground(new java.awt.Color(255, 255, 255));
+        bLogout.setText("LOGOUT");
+        bLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bLogoutActionPerformed(evt);
             }
         });
 
@@ -158,7 +165,7 @@ public class ViewPerfil extends javax.swing.JFrame {
                                 .addComponent(jLabel13)))
                         .addGap(322, 322, 322))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(bLogout)
                         .addGap(445, 445, 445))))
         );
         layout.setVerticalGroup(
@@ -186,16 +193,22 @@ public class ViewPerfil extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jLabel12))
                 .addGap(30, 30, 30)
-                .addComponent(jButton1)
+                .addComponent(bLogout)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLogoutActionPerformed
+        new ViewLogin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bLogoutActionPerformed
+
+    private void lVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lVoltarMouseClicked
+        LoginController.telaHome.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lVoltarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -236,7 +249,7 @@ public class ViewPerfil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -246,10 +259,10 @@ public class ViewPerfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lLogoP;
     private javax.swing.JLabel lRegister;
     private javax.swing.JLabel lUser;
+    private javax.swing.JLabel lVoltar;
     // End of variables declaration//GEN-END:variables
 }

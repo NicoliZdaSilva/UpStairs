@@ -7,9 +7,11 @@ import Model.Administrador;
 import Model.Aluno;
 import Model.Pessoa;
 import Model.Professor;
+import javax.swing.JFrame;
 
 public class LoginController {
     
+    public static JFrame telaHome;
     public LoginController(){
         
     }
@@ -44,5 +46,7 @@ public class LoginController {
             } 
             return null;
     }
+    
+    
     
 }
