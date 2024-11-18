@@ -17,8 +17,8 @@ public class ViewHomeAluno extends javax.swing.JFrame {
      * Creates new form ViewHomeAluno
      */
     public ViewHomeAluno() {
-        jLabel1.setText(LoginController.people.getNome());
         initComponents();
+        jLabel1.setText(LoginController.people.getNome());
     }
 
     /**
@@ -59,6 +59,7 @@ public class ViewHomeAluno extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 51, 153));
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -73,11 +74,14 @@ public class ViewHomeAluno extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pHomeLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(lLogoP)
-                .addGap(708, 708, 708)
-                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lImgPerfil))
-                .addGap(81, 81, 81))
+                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pHomeLayout.createSequentialGroup()
+                        .addGap(708, 708, 708)
+                        .addComponent(lImgPerfil))
+                    .addGroup(pHomeLayout.createSequentialGroup()
+                        .addGap(630, 630, 630)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         pHomeLayout.setVerticalGroup(
             pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

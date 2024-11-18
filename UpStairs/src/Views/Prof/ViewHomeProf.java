@@ -4,6 +4,7 @@
  */
 package Views.Prof;
 
+import Controller.LoginController;
 import Views.ViewPerfil;
 
 /**
@@ -17,6 +18,7 @@ public class ViewHomeProf extends javax.swing.JFrame {
      */
     public ViewHomeProf() {
         initComponents();
+        jLabel1.setText(LoginController.people.getNome());
     }
 
     /**
@@ -57,6 +59,7 @@ public class ViewHomeProf extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 51, 153));
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -71,11 +74,15 @@ public class ViewHomeProf extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pHomeLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(lLogoP)
-                .addGap(708, 708, 708)
-                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lImgPerfil))
-                .addGap(81, 81, 81))
+                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pHomeLayout.createSequentialGroup()
+                        .addGap(708, 708, 708)
+                        .addComponent(lImgPerfil)
+                        .addGap(81, 81, 81))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pHomeLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         pHomeLayout.setVerticalGroup(
             pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

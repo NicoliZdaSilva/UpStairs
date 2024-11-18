@@ -2,18 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Views.Adm;
+package Views;
+
+import Controller.CadastroController;
+import Dao.AlunoDAO;
+import Model.Aluno;
+import Views.Adm.ViewHomeAdm;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author thaia
  */
-public class ViewCadastroProfAdm extends javax.swing.JFrame {
+public class ViewCadastro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewCadastroProf
-     */
-    public ViewCadastroProfAdm() {
+    CadastroController cadastroController = new CadastroController();
+    public ViewCadastro() {
+        
+        
         initComponents();
     }
 
@@ -26,18 +32,20 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         tfName = new javax.swing.JTextField();
-        tfBirthDate = new javax.swing.JTextField();
         tfCPF = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
         tfPassword = new javax.swing.JTextField();
         tfBook = new javax.swing.JTextField();
+        bSave = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lLogoP = new javax.swing.JLabel();
         lRegister = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        bSave = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        rbAdministrator = new javax.swing.JRadioButton();
+        rbTeacher = new javax.swing.JRadioButton();
+        rbStudent = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,14 +54,6 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
         tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNameActionPerformed(evt);
-            }
-        });
-
-        tfBirthDate.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 14)); // NOI18N
-        tfBirthDate.setText("Birth Date");
-        tfBirthDate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfBirthDateActionPerformed(evt);
             }
         });
 
@@ -89,6 +89,15 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
             }
         });
 
+        bSave.setBackground(new java.awt.Color(0, 102, 255));
+        bSave.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        bSave.setText("SAVE");
+        bSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSaveActionPerformed(evt);
+            }
+        });
+
         jPanel1.setBackground(new java.awt.Color(0, 51, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(581, 70));
 
@@ -97,10 +106,15 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
         lRegister.setBackground(new java.awt.Color(0, 51, 102));
         lRegister.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         lRegister.setForeground(new java.awt.Color(255, 255, 255));
-        lRegister.setText("REGISTER - TEACHER");
+        lRegister.setText("REGISTER ");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/arrow_back.png"))); // NOI18N
         jLabel9.setText("jLabel9");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,9 +123,9 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(lLogoP)
-                .addGap(220, 220, 220)
+                .addGap(288, 288, 288)
                 .addComponent(lRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -129,20 +143,33 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        bSave.setBackground(new java.awt.Color(0, 102, 255));
-        bSave.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
-        bSave.setText("SAVE");
-        bSave.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbAdministrator);
+        rbAdministrator.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+        rbAdministrator.setText("Administrator");
+        rbAdministrator.setActionCommand("Administrador");
+        rbAdministrator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bSaveActionPerformed(evt);
+                rbAdministratorActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Microsoft Sans Serif", 3, 14)); // NOI18N
-        jCheckBox1.setText("Administrator");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(rbTeacher);
+        rbTeacher.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+        rbTeacher.setText("Teacher");
+        rbTeacher.setActionCommand("Professor");
+        rbTeacher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                rbTeacherActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbStudent);
+        rbStudent.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+        rbStudent.setText("Student");
+        rbStudent.setActionCommand("Aluno");
+        rbStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbStudentActionPerformed(evt);
             }
         });
 
@@ -154,39 +181,51 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tfName)
-                        .addComponent(tfBirthDate)
-                        .addComponent(tfCPF)
-                        .addComponent(tfEmail)
-                        .addComponent(tfPassword)
-                        .addComponent(tfBook, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(bSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(376, 376, 376))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tfCPF)
+                                .addComponent(tfEmail)
+                                .addComponent(tfPassword)
+                                .addComponent(tfBook, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(349, 349, 349))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbAdministrator))
+                        .addGap(415, 415, 415))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(tfBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(tfBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
                 .addGap(18, 18, 18)
+                .addComponent(tfBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(rbAdministrator)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rbTeacher)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rbStudent)
+                .addGap(27, 27, 27)
                 .addComponent(bSave, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(72, 72, 72))
         );
+
+        tfCPF.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,10 +233,6 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
     private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNameActionPerformed
-
-    private void tfBirthDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBirthDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfBirthDateActionPerformed
 
     private void tfCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCPFActionPerformed
         // TODO add your handling code here:
@@ -216,12 +251,51 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_tfBookActionPerformed
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
-        // TODO add your handling code here:
+        
+        String email= tfEmail.getText();
+        String nome = tfName.getText();
+        String senha = tfPassword.getText();
+        String matricula = tfBook.getText();
+        
+        String tipoCadastro = buttonGroup1.getSelection() != null
+            ? buttonGroup1.getSelection().getActionCommand()
+            : null;
+   
+        if (tipoCadastro == null) {
+        JOptionPane.showMessageDialog(this, "Por favor, selecione o tipo de cadastro!", "Erro", JOptionPane.ERROR_MESSAGE);
+        return;   
+    }
+        switch (tipoCadastro) {
+        case "Administrador":
+            cadastroController.criarAdm(email, nome, senha, matricula);
+            break;
+        case "Professor":
+            cadastroController.criarProf(email, nome, senha, matricula);
+            break;
+        case "Aluno":
+            cadastroController.criarAluno(email, nome, senha, matricula);
+            break;
+        }
+
+                
     }//GEN-LAST:event_bSaveActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        new ViewHomeAdm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void rbAdministratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbAdministratorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_rbAdministratorActionPerformed
+
+    private void rbTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbTeacherActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbTeacherActionPerformed
+
+    private void rbStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,33 +314,41 @@ public class ViewCadastroProfAdm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastroProfAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastroProfAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastroProfAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewCadastroProfAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewCadastroProfAdm().setVisible(true);
+                new ViewCadastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bSave;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lLogoP;
     private javax.swing.JLabel lRegister;
-    private javax.swing.JTextField tfBirthDate;
+    private javax.swing.JRadioButton rbAdministrator;
+    private javax.swing.JRadioButton rbStudent;
+    private javax.swing.JRadioButton rbTeacher;
     private javax.swing.JTextField tfBook;
     private javax.swing.JTextField tfCPF;
     private javax.swing.JTextField tfEmail;

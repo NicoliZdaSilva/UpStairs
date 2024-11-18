@@ -16,11 +16,11 @@ public class ViewPerfil extends javax.swing.JFrame {
      * Creates new form ViewPerfil
      */
     public ViewPerfil() {
+        initComponents();
         lEmail.setText(LoginController.people.getEmail());
         lPassword.setText(LoginController.people.getSenha());
         lMatricula.setText(LoginController.people.getMatricula());
         lUser.setText(LoginController.people.getNome());
-        initComponents();
     }
 
     /**

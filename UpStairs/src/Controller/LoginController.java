@@ -33,16 +33,17 @@ public class LoginController {
                         return null;
                     }
                     if(al.getSenha().equals(password)){
-                        
+                        people = al;
                         return al;
                     }
                  }
                 if(pr.getSenha().equals(password))
+                    people = pr;
                     return pr;
             }
             
             if(admin.getSenha().equals(password)){
-                
+                people = admin;
                 return admin;
          
             } 

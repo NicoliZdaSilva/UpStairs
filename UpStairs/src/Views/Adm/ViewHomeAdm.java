@@ -5,6 +5,7 @@
 package Views.Adm;
 
 import Controller.LoginController;
+import Views.ViewCadastro;
 import Views.ViewPerfil;
 
 /**
@@ -13,13 +14,11 @@ import Views.ViewPerfil;
  */
 public class ViewHomeAdm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewHomeAdm
-     */
+    
     public ViewHomeAdm() {
         
-        jLabel1.setText(LoginController.people.getNome());
         initComponents();
+        jLabel1.setText(LoginController.people.getNome());
     }
 
     /**
@@ -88,6 +87,7 @@ public class ViewHomeAdm extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(0, 51, 153));
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -106,11 +106,14 @@ public class ViewHomeAdm extends javax.swing.JFrame {
                 .addComponent(lProfessores1)
                 .addGap(49, 49, 49)
                 .addComponent(lNewUser)
-                .addGap(219, 219, 219)
-                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lImgPerfil))
-                .addGap(81, 81, 81))
+                .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pHomeLayout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(lImgPerfil))
+                    .addGroup(pHomeLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
         );
         pHomeLayout.setVerticalGroup(
             pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,14 +236,15 @@ public class ViewHomeAdm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pStudents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pStudents1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 437, Short.MAX_VALUE))
+                .addGap(0, 146, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void lNewUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lNewUserMouseClicked
-        
+        new ViewCadastro().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_lNewUserMouseClicked
 
     private void lImgPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lImgPerfilMouseClicked
