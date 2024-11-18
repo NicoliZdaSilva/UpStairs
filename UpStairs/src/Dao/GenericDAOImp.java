@@ -20,9 +20,9 @@ import javax.persistence.Persistence;
  */
 public class GenericDAOImp<T extends Identifier> implements IGenericDAO<T>{
     
-    private final EntityManagerFactory emf;
-    private final EntityManager em;
-    private final Class<?> classType;
+    protected final EntityManagerFactory emf;
+    protected final EntityManager em;
+    protected final Class<?> classType;
 
     public GenericDAOImp() {
         emf = Persistence.createEntityManagerFactory("UpStairs");

@@ -4,15 +4,24 @@
  */
 package Views;
 
+import Controller.LoginController;
+import Model.Administrador;
+import Model.Aluno;
+import Model.Pessoa;
+import Model.Professor;
+import Views.Adm.ViewHomeAdm;
+import Views.Aluno.ViewHomeAluno;
+import Views.Prof.ViewHomeProf;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thaia
  */
 public class ViewLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewLogin
-     */
+    private LoginController controller = new LoginController();
+    
     public ViewLogin() {
         initComponents();
     }
@@ -30,7 +39,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lLogin = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        tfPassword = new javax.swing.JPasswordField();
         bAccess = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,11 +62,11 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        tfPassword.setText("jPasswordField1");
+        tfPassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        tfPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                tfPasswordActionPerformed(evt);
             }
         });
 
@@ -67,13 +76,14 @@ public class ViewLogin extends javax.swing.JFrame {
         bAccess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAccessActionPerformed(evt);
+                Login(evt);
             }
         });
 
         Fundo.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Fundo.setLayer(lLogin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Fundo.setLayer(tfEmail, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Fundo.setLayer(jPasswordField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Fundo.setLayer(tfPassword, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Fundo.setLayer(bAccess, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout FundoLayout = new javax.swing.GroupLayout(Fundo);
@@ -89,7 +99,7 @@ public class ViewLogin extends javax.swing.JFrame {
                 .addGroup(FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(tfEmail)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FundoLayout.createSequentialGroup()
                         .addComponent(bAccess)
                         .addGap(74, 74, 74))
@@ -108,7 +118,7 @@ public class ViewLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bAccess)
                 .addContainerGap(155, Short.MAX_VALUE))
@@ -134,13 +144,35 @@ public class ViewLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfEmailActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_tfPasswordActionPerformed
 
     private void bAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAccessActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bAccessActionPerformed
+
+    private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
+       String email = tfEmail.getText();
+       String password = String.valueOf(tfPassword.getPassword());
+       Pessoa response = controller.login(email,password);
+       
+       if(response == null){
+           JOptionPane.showMessageDialog(this, "Login falhou. E-mail ou senha inválidos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+           
+       }else if (response.getClass()== Administrador.class){
+           new ViewHomeAdm().setVisible(true);
+           this.dispose();
+        
+            }else if (response.getClass()== Professor.class){
+                new ViewHomeProf().setVisible(true);
+                this.dispose();
+        
+                }else if (response.getClass()== Aluno.class){
+                    new ViewHomeAluno().setVisible(true);
+                    this.dispose();
+                }
+    }//GEN-LAST:event_Login
 
     /**
      * @param args the command line arguments
@@ -181,8 +213,8 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JLayeredPane Fundo;
     private javax.swing.JButton bAccess;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lLogin;
     private javax.swing.JTextField tfEmail;
+    private javax.swing.JPasswordField tfPassword;
     // End of variables declaration//GEN-END:variables
 }
