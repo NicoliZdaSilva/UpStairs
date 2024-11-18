@@ -89,7 +89,7 @@ public class ViewCadastro extends javax.swing.JFrame {
             }
         });
 
-        bSave.setBackground(new java.awt.Color(0, 102, 255));
+        bSave.setBackground(new java.awt.Color(0, 51, 153));
         bSave.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         bSave.setText("SAVE");
         bSave.addActionListener(new java.awt.event.ActionListener() {

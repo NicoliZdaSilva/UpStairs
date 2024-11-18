@@ -45,6 +45,7 @@ public class ViewPerfil extends javax.swing.JFrame {
         lMatricula = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         bLogout = new javax.swing.JButton();
+        bUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +99,7 @@ public class ViewPerfil extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         lUser.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        lUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lUser.setText("User");
 
         lEmail.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
@@ -127,20 +129,22 @@ public class ViewPerfil extends javax.swing.JFrame {
             }
         });
 
+        bUpdate.setBackground(new java.awt.Color(0, 51, 153));
+        bUpdate.setText("UPDATE");
+        bUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 993, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(359, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(432, 432, 432))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lUser)
-                        .addGap(468, 468, 468))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -154,11 +158,18 @@ public class ViewPerfil extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(lMatricula)))
-                        .addGap(322, 322, 322))
+                                .addComponent(lMatricula))
+                            .addComponent(bUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(301, 301, 301))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(401, 401, 401))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(bLogout)
-                        .addGap(445, 445, 445))))
+                        .addGap(412, 412, 412))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lUser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(352, 352, 352))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +191,9 @@ public class ViewPerfil extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lMatricula)
                     .addComponent(jLabel11))
-                .addGap(85, 85, 85)
+                .addGap(40, 40, 40)
+                .addComponent(bUpdate)
+                .addGap(18, 18, 18)
                 .addComponent(bLogout)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -197,6 +210,11 @@ public class ViewPerfil extends javax.swing.JFrame {
         LoginController.telaHome.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lVoltarMouseClicked
+
+    private void bUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bUpdateActionPerformed
+        new ViewAtualizarCadastro().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +256,7 @@ public class ViewPerfil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bLogout;
+    private javax.swing.JButton bUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;

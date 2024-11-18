@@ -30,7 +30,7 @@ public class CadastroController {
         adm.setMatricula(matricula);
         
         ad.save(adm);
-         JOptionPane.showMessageDialog(null, "Professor cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(null, "Administrador cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         
         return true;
         }
