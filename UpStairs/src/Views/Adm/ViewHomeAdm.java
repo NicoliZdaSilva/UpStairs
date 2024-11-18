@@ -4,6 +4,9 @@
  */
 package Views.Adm;
 
+import Controller.LoginController;
+import Views.ViewPerfil;
+
 /**
  *
  * @author thaia
@@ -14,6 +17,8 @@ public class ViewHomeAdm extends javax.swing.JFrame {
      * Creates new form ViewHomeAdm
      */
     public ViewHomeAdm() {
+        
+        jLabel1.setText(LoginController.people.getNome());
         initComponents();
     }
 
@@ -33,7 +38,7 @@ public class ViewHomeAdm extends javax.swing.JFrame {
         jPopupMenu2 = new javax.swing.JPopupMenu();
         pHome = new javax.swing.JPanel();
         lLogoP = new javax.swing.JLabel();
-        lProfessores = new javax.swing.JLabel();
+        lNewUser = new javax.swing.JLabel();
         lProfessores1 = new javax.swing.JLabel();
         lImgPerfil = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,10 +63,15 @@ public class ViewHomeAdm extends javax.swing.JFrame {
 
         lLogoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/logo PP.png"))); // NOI18N
 
-        lProfessores.setBackground(new java.awt.Color(0, 51, 153));
-        lProfessores.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
-        lProfessores.setForeground(new java.awt.Color(255, 255, 255));
-        lProfessores.setText("NEW USER ");
+        lNewUser.setBackground(new java.awt.Color(0, 51, 153));
+        lNewUser.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lNewUser.setForeground(new java.awt.Color(255, 255, 255));
+        lNewUser.setText("NEW USER ");
+        lNewUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lNewUserMouseClicked(evt);
+            }
+        });
 
         lProfessores1.setBackground(new java.awt.Color(0, 51, 153));
         lProfessores1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
@@ -69,11 +79,21 @@ public class ViewHomeAdm extends javax.swing.JFrame {
         lProfessores1.setText("TEACHERS");
 
         lImgPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/PERFIL.png"))); // NOI18N
+        lImgPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lImgPerfilMouseClicked(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(0, 51, 153));
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pHomeLayout = new javax.swing.GroupLayout(pHome);
         pHome.setLayout(pHomeLayout);
@@ -85,7 +105,7 @@ public class ViewHomeAdm extends javax.swing.JFrame {
                 .addGap(220, 220, 220)
                 .addComponent(lProfessores1)
                 .addGap(49, 49, 49)
-                .addComponent(lProfessores)
+                .addComponent(lNewUser)
                 .addGap(219, 219, 219)
                 .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,7 +129,7 @@ public class ViewHomeAdm extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(pHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lProfessores1)
-                    .addComponent(lProfessores)))
+                    .addComponent(lNewUser)))
         );
 
         pStudents.setBackground(new java.awt.Color(255, 255, 255));
@@ -152,6 +172,11 @@ public class ViewHomeAdm extends javax.swing.JFrame {
 
         pStudents1.setBackground(new java.awt.Color(255, 255, 255));
         pStudents1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
+        pStudents1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pStudents1MouseClicked(evt);
+            }
+        });
 
         lImgAlunos1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/CLASSES.png"))); // NOI18N
 
@@ -214,6 +239,25 @@ public class ViewHomeAdm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lNewUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lNewUserMouseClicked
+        
+    }//GEN-LAST:event_lNewUserMouseClicked
+
+    private void lImgPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lImgPerfilMouseClicked
+        new ViewPerfil().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lImgPerfilMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        new ViewPerfil().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void pStudents1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pStudents1MouseClicked
+        new ViewClassesAdm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_pStudents1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -264,7 +308,7 @@ public class ViewHomeAdm extends javax.swing.JFrame {
     private javax.swing.JLabel lImgAlunos1;
     private javax.swing.JLabel lImgPerfil;
     private javax.swing.JLabel lLogoP;
-    private javax.swing.JLabel lProfessores;
+    private javax.swing.JLabel lNewUser;
     private javax.swing.JLabel lProfessores1;
     private javax.swing.JPanel pHome;
     private javax.swing.JPanel pStudents;

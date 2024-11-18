@@ -4,6 +4,9 @@
  */
 package Views.Aluno;
 
+import Controller.LoginController;
+import Views.ViewPerfil;
+
 /**
  *
  * @author thaia
@@ -14,6 +17,7 @@ public class ViewHomeAluno extends javax.swing.JFrame {
      * Creates new form ViewHomeAluno
      */
     public ViewHomeAluno() {
+        jLabel1.setText(LoginController.people.getNome());
         initComponents();
     }
 
@@ -46,11 +50,21 @@ public class ViewHomeAluno extends javax.swing.JFrame {
         lLogoP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/logo PP.png"))); // NOI18N
 
         lImgPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/PERFIL.png"))); // NOI18N
+        lImgPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lImgPerfilMouseClicked(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(0, 51, 153));
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pHomeLayout = new javax.swing.GroupLayout(pHome);
         pHome.setLayout(pHomeLayout);
@@ -82,6 +96,11 @@ public class ViewHomeAluno extends javax.swing.JFrame {
 
         pStudents.setBackground(new java.awt.Color(255, 255, 255));
         pStudents.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
+        pStudents.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pStudentsMouseClicked(evt);
+            }
+        });
 
         lImgAlunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/STUDENTS.png"))); // NOI18N
 
@@ -120,6 +139,11 @@ public class ViewHomeAluno extends javax.swing.JFrame {
 
         pStudents4.setBackground(new java.awt.Color(255, 255, 255));
         pStudents4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
+        pStudents4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pStudents4MouseClicked(evt);
+            }
+        });
 
         lImgAlunos4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/CLASSES.png"))); // NOI18N
 
@@ -185,6 +209,26 @@ public class ViewHomeAluno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lImgPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lImgPerfilMouseClicked
+        new ViewPerfil().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lImgPerfilMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        new ViewPerfil().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void pStudentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pStudentsMouseClicked
+        new ViewGradeAluno().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_pStudentsMouseClicked
+
+    private void pStudents4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pStudents4MouseClicked
+        new ViewClassAluno().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_pStudents4MouseClicked
 
     /**
      * @param args the command line arguments

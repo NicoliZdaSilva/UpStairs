@@ -111,6 +111,9 @@
               <Image iconType="3" name="/Resources/PERFIL.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lImgPerfilMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -125,6 +128,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="User"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lImgPerfilMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -141,6 +147,9 @@
           </Border>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pStudents4MouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">

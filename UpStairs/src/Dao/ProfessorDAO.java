@@ -12,7 +12,7 @@ public class ProfessorDAO extends GenericDAOImp<Professor>{
         Professor prof = null;
         try {
             em.getTransaction().begin();
-            prof = em.createQuery("SELECT a FROM professor a WHERE a.email = :email", Professor.class)
+            prof = em.createQuery("SELECT a FROM Professor a WHERE a.email = :email", Professor.class)
                   .setParameter("email", email)
                   .getSingleResult();
             em.getTransaction().commit();

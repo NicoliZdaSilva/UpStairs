@@ -101,7 +101,7 @@
                   <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                   <Component id="lProfessores1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="lProfessores" min="-2" max="-2" attributes="0"/>
+                  <Component id="lNewUser" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
@@ -132,7 +132,7 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lProfessores1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lProfessores" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lNewUser" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -146,7 +146,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lProfessores">
+        <Component class="javax.swing.JLabel" name="lNewUser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="33" red="0" type="rgb"/>
@@ -159,6 +159,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="NEW USER "/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lNewUserMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lProfessores1">
           <Properties>
@@ -180,6 +183,9 @@
               <Image iconType="3" name="/Resources/PERFIL.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lImgPerfilMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -194,6 +200,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="User"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -285,6 +294,9 @@
           </Border>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pStudents1MouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
