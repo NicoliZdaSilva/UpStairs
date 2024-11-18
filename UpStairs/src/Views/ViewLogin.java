@@ -163,16 +163,19 @@ public class ViewLogin extends javax.swing.JFrame {
        }else if (response.getClass()== Administrador.class){
             LoginController.telaHome = new ViewHomeAdm();
             LoginController.telaHome.setVisible(true);
-           this.dispose();
+            LoginController.people = response;
+            this.dispose();
         
             }else if (response.getClass()== Professor.class){
                 LoginController.telaHome = new ViewHomeProf();
                 LoginController.telaHome.setVisible(true);
+                LoginController.people = response;
                 this.dispose();
         
                 }else if (response.getClass()== Aluno.class){
                     LoginController.telaHome = new ViewHomeAluno();
                     LoginController.telaHome.setVisible(true);
+                    LoginController.people = response;
                     this.dispose();
                 }
     }//GEN-LAST:event_Login

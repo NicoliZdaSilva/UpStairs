@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 public class LoginController {
     
     public static JFrame telaHome;
+    public static Pessoa people;
+    
     public LoginController(){
         
     }

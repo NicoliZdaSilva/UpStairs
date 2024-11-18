@@ -16,6 +16,10 @@ public class ViewPerfil extends javax.swing.JFrame {
      * Creates new form ViewPerfil
      */
     public ViewPerfil() {
+        lEmail.setText(LoginController.people.getEmail());
+        lPassword.setText(LoginController.people.getSenha());
+        lMatricula.setText(LoginController.people.getMatricula());
+        lUser.setText(LoginController.people.getNome());
         initComponents();
     }
 
@@ -34,14 +38,12 @@ public class ViewPerfil extends javax.swing.JFrame {
         lVoltar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lUser = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lEmail = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lPassword = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lMatricula = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         bLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,29 +100,23 @@ public class ViewPerfil extends javax.swing.JFrame {
         lUser.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         lUser.setText("User");
 
-        jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        jLabel2.setText("user@email.com");
+        lEmail.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        lEmail.setText("user@email.com");
 
         jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         jLabel3.setText("EMAIL:");
 
-        jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        jLabel4.setText("senhasalva");
+        lPassword.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        lPassword.setText("senhasalva");
 
         jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         jLabel5.setText("PASSWORD:");
 
-        jLabel10.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        jLabel10.setText("matricula");
+        lMatricula.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        lMatricula.setText("matricula");
 
         jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         jLabel11.setText("REGISTRATION:");
-
-        jLabel12.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        jLabel12.setText("BIRTH DATE:");
-
-        jLabel13.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        jLabel13.setText("01/01/2000");
 
         bLogout.setBackground(new java.awt.Color(204, 0, 51));
         bLogout.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,16 +149,12 @@ public class ViewPerfil extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(51, 51, 51)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)))
+                                    .addComponent(lEmail)
+                                    .addComponent(lPassword)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel10))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(49, 49, 49)
-                                .addComponent(jLabel13)))
+                                .addComponent(lMatricula)))
                         .addGap(322, 322, 322))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(bLogout)
@@ -179,20 +171,16 @@ public class ViewPerfil extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(lPassword)
                     .addComponent(jLabel5))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
+                    .addComponent(lMatricula)
                     .addComponent(jLabel11))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel12))
-                .addGap(30, 30, 30)
+                .addGap(85, 85, 85)
                 .addComponent(bLogout)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -251,16 +239,14 @@ public class ViewPerfil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bLogout;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lEmail;
     private javax.swing.JLabel lLogoP;
+    private javax.swing.JLabel lMatricula;
+    private javax.swing.JLabel lPassword;
     private javax.swing.JLabel lRegister;
     private javax.swing.JLabel lUser;
     private javax.swing.JLabel lVoltar;
