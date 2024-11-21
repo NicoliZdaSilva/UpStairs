@@ -4,10 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Controller/CadastroController.java</file>
-            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/Adm/ViewHomeAdm.java</file>
-            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/Aluno/ViewHomeAluno.java</file>
-            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/Prof/ViewHomeProf.java</file>
-            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/ViewCadastro.java</file>
+            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Dao/GenericDAOImp.java</file>
+            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/ViewAtualizarCadastro.java</file>
+            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Controller/UpdateController.java</file>
+            <file>file:/C:/Users/thaia/OneDrive%20-%20UDESC%20Universidade%20do%20Estado%20de%20Santa%20Catarina/Faculdade/FASE_3/DOO2/UpStairs/UpStairs/src/Views/ViewPerfil.java</file>
         </group>
     </open-files>
 </project-private>
